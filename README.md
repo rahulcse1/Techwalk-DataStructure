@@ -1,5 +1,5 @@
 # DataStructure
-My Algo and data structure code.
+My Algorithm and data structure code.
 
 
-Just writting some data structure and algo code for self learning purpose.
+Just writing some data structure and Algorithm code for self learning purpose.

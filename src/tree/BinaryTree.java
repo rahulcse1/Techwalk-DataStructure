@@ -17,7 +17,7 @@ public class BinaryTree {
 		if (node == null)
 			return;
 		if (MAX_LEVEL < level) {
-			System.out.println(node.data);
+			System.out.println(node.value);
 			MAX_LEVEL = level;
 		}
 		printLeftView(node.left, level + 1);
@@ -28,10 +28,18 @@ public class BinaryTree {
 		if (node == null)
 			return;
 		if (MAX_LEVEL < level) {
-			System.out.println(node.data);
+			System.out.println(node.value);
 			MAX_LEVEL = level;
 		}
 		printRightView(node.right, level + 1);
 		printRightView(node.left, level + 1);
+	}
+
+	boolean isValidBST(Node node, int min, int max) {
+		if (node == null)
+			return true;
+		if (node.value < min || node.value > max)
+			return false;
+		return (isValidBST(node.left, min, node.value - 1) && isValidBST(node.right, node.value + 1, max));
 	}
 }

@@ -42,4 +42,13 @@ public class BinaryTree {
 			return false;
 		return (isValidBST(node.left, min, node.value - 1) && isValidBST(node.right, node.value + 1, max));
 	}
+
+	boolean isNodeExist(Node node, int number) {
+		if (node == null)
+			return false;
+		if (node.value == number) {
+			return true;
+		}
+		return (isNodeExist(node.left, number) || isNodeExist(node.right, number));
+	}
 }

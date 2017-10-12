@@ -4,7 +4,7 @@ public class RotateArray {
 
 	static int[] rotateArray(int[] a, int delement) {
 		int len = a.length;
-		for (int i = 0; i < delement; i++) {
+		for (int j = 0; j < delement; j++) {
 			leftRotatebyOne(a, len);
 		}
 		return a;

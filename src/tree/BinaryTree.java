@@ -35,12 +35,20 @@ public class BinaryTree {
 		printRightView(node.left, level + 1);
 	}
 
-	boolean isValidBST(Node node, int min, int max) {
+	static int lastValue = Integer.MIN_VALUE;
+
+	boolean isValidBST(Node node) {
 		if (node == null)
 			return true;
-		if (node.value < min || node.value > max)
+		int value = node.value;
+		Node left = node.left;
+		Node right = node.right;
+		if (!isValidBST(left))
 			return false;
-		return (isValidBST(node.left, min, node.value - 1) && isValidBST(node.right, node.value + 1, max));
+		if (value < lastValue)
+			return false;
+		lastValue = value;
+		return (isValidBST(right));
 	}
 
 	boolean isNodeExist(Node node, int number) {

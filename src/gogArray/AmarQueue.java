@@ -1,6 +1,7 @@
 package gogArray;
 
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 import java.util.Stack;
 
 public class AmarQueue<E> {
@@ -16,6 +17,8 @@ public class AmarQueue<E> {
 	public void dqueue() {
 		if (size != 0) {
 			s.remove(0);
+		} else if (size == 0) {
+			throw new NoSuchElementException("Queue is empty. Queue can't be empty for pop operation.");
 		}
 	}
 
